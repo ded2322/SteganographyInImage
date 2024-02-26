@@ -1,6 +1,6 @@
 from menu_help import menu_help
 from hide_message import encryption_png
-
+from decryption_message import decryption_png
 def user_chose():
     while True:
         user_input = int(input(
@@ -16,7 +16,7 @@ def user_chose():
             case 1:
                 encryption_png()
             case 2:
-                break
+                decryption_png()
             case 3:
                 break
             case 4:

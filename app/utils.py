@@ -1,7 +1,22 @@
 import os
 
 
-def check_extension(name_secret_image:str,extension:str)->str:
+def file_path() -> str | None:
+    image_path = input("Введите путь до изображения: ")
+    if not check_image(image_path):
+        print("Неверный путь до изображения.\n")
+        return None
+    return image_path
+
+
+def user_message(png: bool) -> str | None:
+    massage_user = input("Введите сообщение которое хотите зашифровать: ")
+    if png:
+        massage_user = check_cyrillic(massage_user)
+    return massage_user
+
+
+def check_extension(name_secret_image: str, extension: str) -> str:
     if not name_secret_image.endswith(extension):
         return name_secret_image + extension
     return name_secret_image
