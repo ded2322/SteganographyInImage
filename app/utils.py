@@ -16,7 +16,9 @@ def user_message(png: bool) -> str | None:
     return massage_user
 
 
-def check_extension(name_secret_image: str, extension: str) -> str:
+def check_extension(extension: str) -> str:
+    name_secret_image = input("Введите какое название вы хотите у зашифрованного изображения: ")
+
     if not name_secret_image.endswith(extension):
         return name_secret_image + extension
     return name_secret_image
