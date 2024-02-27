@@ -27,7 +27,7 @@ def encryption_jpg():
     """
     try:
         # Прячем сообщения в изображении
-        secret = exifHeader.hide(file_path(),check_extension('.jpg'),user_message())
+        exifHeader.hide(file_path(),check_extension('.jpg'),user_message())
         filePath = os.getcwd()
         print(f'\nПуть до файла: {filePath}')
     except Exception as e:
