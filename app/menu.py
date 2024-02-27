@@ -1,6 +1,8 @@
 from menu_help import menu_help
-from hide_message import encryption_png
-from decryption_message import decryption_png
+from hide_message import encryption_png, encryption_jpg
+from decryption_message import decryption_png, decryption_jpg
+
+
 def user_chose():
     while True:
         user_input = int(input(
@@ -18,9 +20,9 @@ def user_chose():
             case 2:
                 decryption_png()
             case 3:
-                break
+                encryption_jpg()
             case 4:
-                break
+                decryption_jpg()
             case 5:
                 menu_help()
             case 6:

@@ -9,7 +9,7 @@ def file_path() -> str | None:
     return image_path
 
 
-def user_message(png: bool) -> str | None:
+def user_message(png: bool = False) -> str | None:
     massage_user = input("Введите сообщение которое хотите зашифровать: ")
     if png:
         massage_user = check_cyrillic(massage_user)

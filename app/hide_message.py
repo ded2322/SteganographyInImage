@@ -19,3 +19,16 @@ def encryption_png():
         print(f'\nПуть до файла: {filePath}')
     except Exception as e:
         print(f'Произошла ошибка: {str(e)}')
+
+def encryption_jpg():
+    """
+
+    :return:
+    """
+    try:
+        # Прячем сообщения в изображении
+        secret = exifHeader.hide(file_path(),check_extension('.jpg'),user_message())
+        filePath = os.getcwd()
+        print(f'\nПуть до файла: {filePath}')
+    except Exception as e:
+        print(f'Произошла ошибка: {str(e)}')
