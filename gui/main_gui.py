@@ -5,40 +5,7 @@ from stegano import lsb, exifHeader
 
 def main(page: ft.Page):
 
-    t = ft.Tabs(
-        selected_index=1,
-        animation_duration=300,
-        tabs=[
-            ft.Tab(
-                text="Шифрование",
-
-                content=ft.Container(
-                    content=ft.ElevatedButton(text="Шифровка сообщения в изображении (формат png)"),
-
-                ),
-
-
-
-            ),
-            ft.Tab(
-                text="Дешифрование",
-
-
-            ),
-            ft.Tab(
-                text="Меню помощи",
-                icon=ft.icons.SETTINGS,
-
-            ),
-        ],
-        expand=1,
-    )
-
-    page.add(t)
-
-
-
-"""    def hide_massage(e):
+    def hide_massage(e):
 
         def cryption_png(e):
             # todo проверка на путь, проверка окончания
@@ -127,7 +94,7 @@ def main(page: ft.Page):
         page.add(ft.ElevatedButton(text="Дешифровка сообщения в изображении (формат jpg)", on_click=decryption_jpg))
 
     page.add(ft.ElevatedButton(text="Зашифровать сообщение", on_click=hide_massage))
-    page.add(ft.ElevatedButton(text="Дешифровать сообщение", on_click=decryption)''')"""
+    page.add(ft.ElevatedButton(text="Дешифровать сообщение", on_click=decryption))
 
 
 # Стартует приложение
