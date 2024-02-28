@@ -2,11 +2,46 @@ import flet as ft
 from PIL import Image
 from stegano import lsb, exifHeader
 
+
 def main(page: ft.Page):
-    def hide_massage(e):
+
+    t = ft.Tabs(
+        selected_index=1,
+        animation_duration=300,
+        tabs=[
+            ft.Tab(
+                text="Шифрование",
+
+                content=ft.Container(
+                    content=ft.ElevatedButton(text="Шифровка сообщения в изображении (формат png)"),
+
+                ),
+
+
+
+            ),
+            ft.Tab(
+                text="Дешифрование",
+
+
+            ),
+            ft.Tab(
+                text="Меню помощи",
+                icon=ft.icons.SETTINGS,
+
+            ),
+        ],
+        expand=1,
+    )
+
+    page.add(t)
+
+
+
+"""    def hide_massage(e):
 
         def cryption_png(e):
-            #todo проверка на путь, проверка окончания
+            # todo проверка на путь, проверка окончания
             def data_user(e):
                 if not file_path.value or not name_secret_image or not secret_message:
                     file_path.error_text = "Введите путь до изображения"
@@ -25,7 +60,6 @@ def main(page: ft.Page):
                             img.save(file)
                             print("Image converted to RGB")
 
-
                     secret = lsb.hide(file, message)
                     secret.save(secret_image)
                     page.clean()
@@ -34,8 +68,8 @@ def main(page: ft.Page):
             file_path = ft.TextField(hint_text="Path: ", width=300)
             name_secret_image = ft.TextField(hint_text=" name_secret_image: ", width=300)
             secret_message = ft.TextField(hint_text="Message: ", width=300)
-            page.add(ft.Row([file_path,name_secret_image,secret_message, ft.ElevatedButton("Add", on_click=data_user)]))
-
+            page.add(
+                ft.Row([file_path, name_secret_image, secret_message, ft.ElevatedButton("Add", on_click=data_user)]))
 
         def cryption_jpg(e):
             # todo проверка на путь, проверка окончания, сделать более чистым
@@ -51,8 +85,7 @@ def main(page: ft.Page):
                     secret_image = name_secret_image.value
                     message = secret_message.value
 
-
-                    exifHeader.hide(file,secret_image,message)
+                    exifHeader.hide(file, secret_image, message)
                     page.add(ft.Text(f"Успешно зашифрованно!"))
 
             file_path = ft.TextField(hint_text="Path: ", width=300)
@@ -75,7 +108,7 @@ def main(page: ft.Page):
                     page.add(ft.Text(f"Зашифрованное сообщение: {lsb.reveal(file)}"))
 
             file_path = ft.TextField(hint_text="Path: ", width=300)
-            page.add(ft.Row([file_path,ft.ElevatedButton("Add", on_click=data_user)]))
+            page.add(ft.Row([file_path, ft.ElevatedButton("Add", on_click=data_user)]))
 
         def decryption_jpg(e):
             def data_user(e):
@@ -88,15 +121,13 @@ def main(page: ft.Page):
                     page.add(ft.Text(f"Зашифрованное сообщение: {message}"))
 
             file_path = ft.TextField(hint_text="Path: ", width=300)
-            page.add(ft.Row([file_path,ft.ElevatedButton("Add", on_click=data_user)]))
+            page.add(ft.Row([file_path, ft.ElevatedButton("Add", on_click=data_user)]))
 
         page.add(ft.ElevatedButton(text="Дешифровка сообщения в изображении (формат png)", on_click=decryption_png))
         page.add(ft.ElevatedButton(text="Дешифровка сообщения в изображении (формат jpg)", on_click=decryption_jpg))
 
-
     page.add(ft.ElevatedButton(text="Зашифровать сообщение", on_click=hide_massage))
-    page.add(ft.ElevatedButton(text="Дешифровать сообщение", on_click=decryption))
-
+    page.add(ft.ElevatedButton(text="Дешифровать сообщение", on_click=decryption)''')"""
 
 
 # Стартует приложение
