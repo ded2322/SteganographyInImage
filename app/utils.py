@@ -5,7 +5,7 @@ def file_path() -> str | None:
     image_path = input("Введите путь до изображения: ")
     if not check_image(image_path):
         print("Неверный путь до изображения.\n")
-        return None
+        file_path()
     return image_path
 
 
