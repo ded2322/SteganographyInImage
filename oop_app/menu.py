@@ -1,8 +1,17 @@
-from oop_app.mixins import FilePathCrypt
 from oop_app.steganography import Steganography
+from app.menu_help import menu_help
+
+
 class Menu:
+    """
+   Класс Menu представляет меню выбора пользователя.
+   """
 
     def user_choice(self):
+        """
+       Метод user_choice() обрабатывает выбор пользователя из меню.
+       Используется бесконечный цикл для повторного отображения меню после каждого выбора.
+       """
         while True:
             user_input = int(input(
                 "Выберете подходящий режим:\n"
@@ -19,6 +28,6 @@ class Menu:
                 case 2:
                     steganography.decrypt()
                 case 3:
-                    ...
+                    menu_help()
                 case 4:
-                    ...
+                    break
