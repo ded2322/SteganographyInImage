@@ -9,10 +9,6 @@ class EncryptionFabric(ABC):
     def encryption(self, image_path, message):
         pass
 
-    @abstractmethod
-    def decryption(self,image_path):
-        pass
-
 class PNGEncryptionFabric(EncryptionFabric):
 
     def encryption(self, image_path, message):

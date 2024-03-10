@@ -12,13 +12,12 @@ class Menu:
                 "4. Выйти из программы\n"
                 "Ваш выбор: "
             ))
-
+            steganography = Steganography()
             match user_input:
                 case 1:
-                    encryptor = Steganography()
-                    encryptor.encrypt()
+                    steganography.encrypt()
                 case 2:
-                    ...
+                    steganography.decrypt()
                 case 3:
                     ...
                 case 4:

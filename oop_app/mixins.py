@@ -2,7 +2,7 @@ import os
 from abc import ABC, abstractmethod
 
 from oop_app.encrypt_strategy import PNGEncryptionFabric, JPGEncryptionFabric
-
+from oop_app.decryption_strategy import PNGDecryptionFabric, JPGDecryptionFabric
 
 class FilePathCrypt:
 
@@ -21,7 +21,23 @@ class FilePathCrypt:
                 return {"image_path":image_path,"replica":JPGEncryptionFabric()}
         else:
             print("Неверный путь до изображения.\n")
+class FilePathDecrypt:
 
+    @staticmethod
+    def check_extension():
+        """
+        Проверяет расширение файла и возвращает словарь с путем и экземпляром класса
+        вместе с путем к файлу.
+        """
+        image_path = input("Введите путь до изображения: ")
+
+        if os.path.exists(image_path):
+            if image_path.endswith(".png"):
+                return {"image_path":image_path,"replica":PNGDecryptionFabric()}
+            if image_path.endswith(".jpg"):
+                return {"image_path":image_path,"replica":JPGDecryptionFabric()}
+        else:
+            print("Неверный путь до изображения.\n")
 
 def user_input():
     massage_user = input("Введите сообщение которое хотите зашифровать: ")

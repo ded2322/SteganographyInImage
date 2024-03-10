@@ -1,4 +1,4 @@
-from oop_app.mixins import FilePathCrypt
+from oop_app.mixins import FilePathCrypt,FilePathDecrypt
 from oop_app.mixins import user_input,check_cyrillic
 
 
@@ -6,16 +6,17 @@ class Steganography:
     """
 
     """
-    #decryption_strategy
-    def __init__(self):
-        self.file_extension = FilePathCrypt.check_extension()
 
     def encrypt(self):
         """
 
         """
+        file_extension_crypt = FilePathCrypt.check_extension()
+
         message = user_input()
         message = check_cyrillic(message)
-        self.file_extension["replica"].encryption(self.file_extension["image_path"],message=message)
-    #def decrypt(self):
-    #    self.encryption_strategy.encryption(self)
+        file_extension_crypt["replica"].encryption(file_extension_crypt["image_path"], message=message)
+    def decrypt(self):
+        file_extension_decrypt = FilePathDecrypt.check_extension()
+
+        file_extension_decrypt["replica"].decryption(file_extension_decrypt["image_path"])
