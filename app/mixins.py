@@ -1,8 +1,8 @@
 import os
 from abc import ABC, abstractmethod
 
-from oop_app.encrypt_fabric import PNGEncryptionFabric, JPGEncryptionFabric
-from oop_app.decryption_fabric import PNGDecryptionFabric, JPGDecryptionFabric
+from app.encrypt_fabric import PNGEncryptionFabric, JPGEncryptionFabric
+from app.decryption_fabric import PNGDecryptionFabric, JPGDecryptionFabric
 
 
 class FilePath:
@@ -34,8 +34,8 @@ class FilePath:
 import os
 from abc import ABC, abstractmethod
 
-from oop_app.encrypt_fabric import PNGEncryptionFabric, JPGEncryptionFabric
-from oop_app.decryption_fabric import PNGDecryptionFabric, JPGDecryptionFabric
+from app.encrypt_fabric import PNGEncryptionFabric, JPGEncryptionFabric
+from app.decryption_fabric import PNGDecryptionFabric, JPGDecryptionFabric
 
 
 class FilePathCrypt:
@@ -78,7 +78,6 @@ def user_input():
    massage_user = input("Введите сообщение которое хотите зашифровать: ")
    return massage_user
 
-
 def check_cyrillic(text: str) -> str:
    """
    Проверяет наличие кириллицы в тексте и предлагает пользователю продолжить или ввести новый текст.
@@ -96,3 +95,12 @@ def check_cyrillic(text: str) -> str:
            return text
        text = input("Введите новый текст")
 
+def menu_help():
+    with open("menu_help.txt", "r", encoding="utf-8") as file:
+        help_text = file.read()
+    print(help_text)
+
+    while True:
+        user = input('Выйти в главное меню Д/Н: ')
+        if user == 'Д' or 'д':
+            break

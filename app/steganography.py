@@ -1,5 +1,5 @@
-from oop_app.mixins import FilePath
-from oop_app.mixins import user_input, check_cyrillic
+from app.mixins import FilePath
+from app.mixins import user_input, check_cyrillic
 
 
 class Steganography:
