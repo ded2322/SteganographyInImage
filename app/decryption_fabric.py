@@ -31,6 +31,7 @@ class PNGDecryptionFabric(DecryptionFabric):
         try:
             decrypted_message = lsb.reveal(file_path)
             print("Зашифрованное сообщение: " + decrypted_message + "\n")
+            return decrypted_message
         except FileNotFoundError:
             print("Файл не найден.")
         except Exception as e:
@@ -51,6 +52,7 @@ class JPGDecryptionFabric(DecryptionFabric):
         try:
             decrypted_message = exifHeader.reveal(file_path).decode()
             print("Зашифрованное сообщение: " + decrypted_message + "\n")
+            return decrypted_message
         except FileNotFoundError:
             print("Файл не найден.")
         except Exception as e:
