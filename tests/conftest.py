@@ -5,18 +5,12 @@ import os
 
 
 def create_encryption_fabric(fabric_type):
-    fabrics = {
-        'png': PNGEncryptionFabric,
-        'jpg': JPGEncryptionFabric
-    }
+    fabrics = {"png": PNGEncryptionFabric, "jpg": JPGEncryptionFabric}
     return fabrics[fabric_type]()
 
 
 def create_decrypt_fabric(fabric_type):
-    fabrics = {
-        "png": PNGDecryptionFabric,
-        "jpg": JPGDecryptionFabric
-    }
+    fabrics = {"png": PNGDecryptionFabric, "jpg": JPGDecryptionFabric}
     return fabrics[fabric_type]()
 
 
@@ -32,9 +26,9 @@ def encryption_fabric(request):
 
 @pytest.fixture
 def image_path(request):
-    image_paths= {
-        "png":"C:\\Users\\mdebc_nwrashl\\PycharmProjects\\stegonagrafy\\tests\\загружено.png",
-        "jpg": "C:\\Users\\mdebc_nwrashl\\PycharmProjects\\stegonagrafy\\tests\\2.jpg"
+    image_paths = {
+        "png": "C:\\Users\\mdebc_nwrashl\\PycharmProjects\\stegonagrafy\\tests\\загружено.png",
+        "jpg": "C:\\Users\\mdebc_nwrashl\\PycharmProjects\\stegonagrafy\\tests\\2.jpg",
     }
     return image_paths[request.param]
 

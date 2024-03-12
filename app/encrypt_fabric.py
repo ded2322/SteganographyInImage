@@ -39,9 +39,9 @@ class PNGEncryptionFabric(EncryptionFabric):
             secret.save(image_path)
             # Путь где лежит сохраненный файл
             filePath = os.getcwd()
-            print(f'\nПуть до файла: {filePath}')
+            print(f"\nПуть до файла: {filePath}")
         except Exception as e:
-            print(f'Произошла ошибка: {str(e)}')
+            print(f"Произошла ошибка: {str(e)}")
 
 
 class JPGEncryptionFabric(EncryptionFabric):
@@ -60,6 +60,6 @@ class JPGEncryptionFabric(EncryptionFabric):
             # Прячем сообщения в изображении
             exifHeader.hide(image_path, image_path, message)
             filePath = os.getcwd()
-            print(f'\nПуть до файла: {filePath}')
+            print(f"\nПуть до файла: {filePath}")
         except Exception as e:
-            print(f'Произошла ошибка: {str(e)}')
+            print(f"Произошла ошибка: {str(e)}")
